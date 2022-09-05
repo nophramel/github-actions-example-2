@@ -1,0 +1,15 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  install-and-check-go-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code from git repository
+        uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v3
+
+        with:
+          go-version: '1.17'
+      - name: Show go version
+        run: go version
